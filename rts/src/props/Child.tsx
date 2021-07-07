@@ -1,9 +1,39 @@
-const Child = () => {
+interface ChildProps {
+  color: string;
+  onClick: () => void;
+}
+
+export const Child = ({ color, onClick }: ChildProps) => {
   return (
     <div>
-      <h1>ciao</h1>
+      <h1>{color}</h1>
+      <button onClick={onClick}>Click me</button>
     </div>
   );
 };
 
-export { Child };
+export const ChildAsFC: React.FC<ChildProps> = ({
+  color,
+  onClick,
+  children,
+}) => {
+  return (
+    <div>
+      <h1>{color}</h1>
+      {children}
+    </div>
+  );
+};
+
+//ChildAsFC.defaultProps ={}
+
+export const ChildAsFC2: React.FunctionComponent<ChildProps> = ({
+  color,
+  onClick,
+}) => {
+  return (
+    <div>
+      <h1>{color}</h1>
+    </div>
+  );
+};
