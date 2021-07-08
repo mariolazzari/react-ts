@@ -1,9 +1,12 @@
 import ReactDOM from "react-dom";
+import GusetList from "./state/GusetList";
+import UserSearch from "./state/UserSearch";
 
 const App = () => {
   return (
     <div>
-      <h1>Hi there!</h1>
+      <GusetList />
+      <UserSearch />
     </div>
   );
 };
