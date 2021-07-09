@@ -2,8 +2,8 @@ import { ChildAsFC } from "./Child";
 
 const Parent = () => {
   return (
-    <ChildAsFC color="red" onClick={() => console.log("clicked")}>
-      <h2>clhild</h2>
+    <ChildAsFC color="red" onClick={() => console.log("Clicked")}>
+      alsdkf
     </ChildAsFC>
   );
 };

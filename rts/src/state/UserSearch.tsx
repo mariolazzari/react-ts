@@ -1,29 +1,31 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 
 const users = [
-  { name: "Mario", age: 46 },
-  { name: "Mary", age: 45 },
+  { name: "Sarah", age: 20 },
+  { name: "Alex", age: 20 },
+  { name: "Michael", age: 20 },
 ];
 
-const UserSearch: FC = () => {
+const UserSearch: React.FC = () => {
   const [name, setName] = useState("");
-  const [user, setUser] = useState<{ name: string; age: Number } | undefined>();
+  const [user, setUser] = useState<{ name: string; age: number } | undefined>();
 
   const onClick = () => {
-    const user = users.find(u => u.name === name);
-    setUser(user);
+    const foundUser = users.find(user => {
+      return user.name === name;
+    });
+
+    setUser(foundUser);
   };
 
   return (
     <div>
-      <h3>User Search</h3>
-
+      User Search
       <input value={name} onChange={e => setName(e.target.value)} />
-      <button onClick={onClick}>Search</button>
-
+      <button onClick={onClick}>Find User</button>
       <div>
-        {user?.name}
-        {user?.age}
+        {user && user.name}
+        {user && user.age}
       </div>
     </div>
   );

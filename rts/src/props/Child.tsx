@@ -6,7 +6,7 @@ interface ChildProps {
 export const Child = ({ color, onClick }: ChildProps) => {
   return (
     <div>
-      <h1>{color}</h1>
+      {color}
       <button onClick={onClick}>Click me</button>
     </div>
   );
@@ -19,21 +19,9 @@ export const ChildAsFC: React.FC<ChildProps> = ({
 }) => {
   return (
     <div>
-      <h1>{color}</h1>
+      {color}
       {children}
-    </div>
-  );
-};
-
-//ChildAsFC.defaultProps ={}
-
-export const ChildAsFC2: React.FunctionComponent<ChildProps> = ({
-  color,
-  onClick,
-}) => {
-  return (
-    <div>
-      <h1>{color}</h1>
+      <button onClick={onClick}>Click me</button>
     </div>
   );
 };
