@@ -1,6 +1,6 @@
-import 'bulmaswatch/superhero/bulmaswatch.min.css';
-import ReactDOM from 'react-dom';
-import CodeCell from './components/code-cell';
+import "bulmaswatch/superhero/bulmaswatch.min.css";
+import ReactDOM from "react-dom";
+import CodeCell from "./components/code-cell";
 
 const App = () => {
   return (
@@ -10,4 +10,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector("#root"));
