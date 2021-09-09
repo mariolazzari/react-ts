@@ -1,11 +1,11 @@
-import './code-cell.css';
-import { useEffect } from 'react';
-import CodeEditor from './code-editor';
-import Preview from './preview';
-import Resizable from './resizable';
-import { Cell } from '../state';
-import { useActions } from '../hooks/use-actions';
-import { useTypedSelector } from '../hooks/use-typed-selector';
+import "./code-cell.css";
+import { useEffect } from "react";
+import CodeEditor from "./code-editor";
+import Preview from "./preview";
+import Resizable from "./resizable";
+import { Cell } from "../state";
+import { useActions } from "../hooks/use-actions";
+import { useTypedSelector } from "../hooks/use-typed-selector";
 
 interface CodeCellProps {
   cell: Cell;
@@ -13,7 +13,7 @@ interface CodeCellProps {
 
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const { updateCell, createBundle } = useActions();
-  const bundle = useTypedSelector((state) => state.bundles[cell.id]);
+  const bundle = useTypedSelector(state => state.bundles[cell.id]);
 
   useEffect(() => {
     if (!bundle) {
@@ -35,15 +35,15 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
     <Resizable direction="vertical">
       <div
         style={{
-          height: 'calc(100% - 10px)',
-          display: 'flex',
-          flexDirection: 'row',
+          height: "calc(100% - 10px)",
+          display: "flex",
+          flexDirection: "row",
         }}
       >
         <Resizable direction="horizontal">
           <CodeEditor
             initialValue={cell.content}
-            onChange={(value) => updateCell(cell.id, value)}
+            onChange={value => updateCell(cell.id, value)}
           />
         </Resizable>
         <div className="progress-wrapper">
