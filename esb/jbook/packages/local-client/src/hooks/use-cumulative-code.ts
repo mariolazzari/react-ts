@@ -1,9 +1,9 @@
-import { useTypedSelector } from './use-typed-selector';
+import { useTypedSelector } from "./use-typed-selector";
 
 export const useCumulativeCode = (cellId: string) => {
-  return useTypedSelector((state) => {
+  return useTypedSelector(state => {
     const { data, order } = state.cells;
-    const orderedCells = order.map((id) => data[id]);
+    const orderedCells = order.map(id => data[id]);
 
     const showFunc = `
     import _React from 'react';
@@ -22,10 +22,10 @@ export const useCumulativeCode = (cellId: string) => {
       }
     };
   `;
-    const showFuncNoop = 'var show = () => {}';
+    const showFuncNoop = "var show = () => {}";
     const cumulativeCode = [];
     for (let c of orderedCells) {
-      if (c.type === 'code') {
+      if (c.type === "code") {
         if (c.id === cellId) {
           cumulativeCode.push(showFunc);
         } else {
@@ -38,5 +38,5 @@ export const useCumulativeCode = (cellId: string) => {
       }
     }
     return cumulativeCode;
-  }).join('\n');
+  }).join("\n");
 };
