@@ -1,5 +1,5 @@
-import { Dispatch } from 'redux';
-import { ActionType } from '../action-types';
+import { Dispatch } from "redux";
+import { ActionType } from "../action-types";
 import {
   UpdateCellAction,
   DeleteCellAction,
@@ -7,9 +7,9 @@ import {
   InsertCellAfterAction,
   Direction,
   Action,
-} from '../actions';
-import { CellTypes } from '../cell';
-import bundle from '../../bundler';
+} from "../actions";
+import { CellTypes } from "../cell";
+import bundle from "../../bundler";
 
 export const updateCell = (id: string, content: string): UpdateCellAction => {
   return {
